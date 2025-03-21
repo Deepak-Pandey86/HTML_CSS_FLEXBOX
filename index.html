@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Combined Layout</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+        header, footer {
+            background: yellowgreen;
+            height: 15vh;
+            text-align: center;
+            padding: 2em;
+            font-size: 1.5em;
+        }
+        #main {
+            display: flex;
+            flex: 1;
+        }
+        #main > article {
+            flex: 1;
+            order: 1;
+            padding: 1em;
+        }
+        #main > nav, #main > aside {
+            flex: 0 0 20vw;
+            padding: 1em;
+        }
+        #main > nav {
+            background: #D7E8D4;
+            order: 3;
+        }
+        #main > aside {
+            background: beige;
+            order: 2;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2em;
+        }
+        .card {
+            flex: 0 0 200px;
+            margin: 15px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.3);
+            text-align: center;
+            background: white;
+        }
+        .card img {
+            max-width: 100%;
+        }
+        .card .text {
+            padding: 1em;
+        }
+        .card button {
+            background: gray;
+            border: none;
+            color: white;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 2em;
+        }
+        .gallery img {
+            margin: 10px;
+            border: 3px solid #000;
+            box-shadow: 3px 3px 8px rgba(0,0,0,0.3);
+            max-width: 23vw;
+        }
+        .media {
+            display: flex;
+            align-items: flex-start;
+            background: #F6F3EB;
+            padding: 1em;
+            border-radius: 5px;
+            max-width: 24em;
+            margin: 2em auto;
+        }
+        .media img {
+            margin-right: 1em;
+            border-radius: 5px;
+            width: 80px;
+            height: 80px;
+        }
+        .media-body {
+            flex: 1;
+        }
+        h2{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>Welcome to Flexbox WebPage</header>
+    <div id="main">
+        <article>Article Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptate fugit, eos culpa nesciunt repellat beatae repellendus laudantium itaque labore!</article>
+        <nav>Navigation</nav>
+        <aside>Sidebar</aside>
+    </div>
+    
+
+    <h2>Cards Sections</h2>
+    <main class="cards">
+        <article class="card">
+            <img src="https://www.quackit.com/pix/samples/32m.jpg" alt="Random Image">
+            <div class="text">
+                <h3>Title One</h3>
+                <p>Some example text.</p>
+                <button>Read More</button>
+            </div>
+        </article>
+        <article class="card">
+            <img src="https://www.quackit.com/pix/samples/27m.jpg" alt="Random Image">
+            <div class="text">
+                <h3>Title Two</h3>
+                <p>Some example text.</p>
+                <button>Read More</button>
+            </div>
+        </article>
+    </main>
+    
+    <h2>Photo Gallery Section</h2>
+    <section class="gallery">
+        <img src="https://www.quackit.com/pix/samples/25m.jpg" alt="Gallery Image">
+        <img src="https://www.quackit.com/pix/samples/28m.jpg" alt="Gallery Image">
+        <img src="https://www.quackit.com/pix/samples/32m.jpg" alt="Gallery Image">
+        <img src="https://www.quackit.com/pix/samples/29m.jpg" alt="Gallery Image">
+        <img src="https://www.quackit.com/pix/samples/30m.jpg" alt="Gallery Image">
+        <img src="https://www.quackit.com/pix/samples/27m.jpg" alt="Gallery Image">
+        <img src="https://www.quackit.com/pix/samples/32m.jpg" alt="Gallery Image">
+        <img src="https://www.quackit.com/pix/samples/33m.jpg" alt="Gallery Image">
+    </section>
+    
+    <h2>Media Object Section</h2>
+    <div class="media">
+        <img class="media-object" src="https://www.quackit.com/pix/samples/8s.jpg" alt="Gallery Image">
+        <div class="media-body">
+          <h3 class="media-heading">Organically Synthesized</h3>
+          <p>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.</p>
+        </div>
+      </div>
+    
+    <footer>Footer</footer>
+</body>
+</html>
